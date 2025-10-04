@@ -5,4 +5,11 @@
             insert into easy.member(email, password)
             values (#{email},#{password});
         </insert>
+
+    <select id="findByEmailAndPassword" parameterType="com.joinpractice.member.dto.MemberDto"
+            resultType="com.joinpractice.member.dto.MemberDto">
+        SELECT id, email, password
+        FROM easy.member
+        WHERE email = #{email} AND password = #{password}
+    </select>
 </mapper>

@@ -14,4 +14,8 @@ public class MemberService {
     public void insertMember(MemberDto memberDto) {
         memberDao.insertMember(memberDto);
     }
+
+    public MemberDto login(MemberDto memberDto) {
+        return memberDao.findByEmailAndPassword(memberDto);
+    }
 }
